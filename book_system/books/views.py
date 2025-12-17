@@ -5,6 +5,10 @@ from .forms import BookForm
 
 # Create your views here.
 
+def book_list(request):
+    books = Book.objects.all()
+    return render(request, 'books/book_list.html', {'books': books})
+
 def book_create(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
