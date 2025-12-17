@@ -31,4 +31,4 @@ def book_delete(request, pk):
         book.delete()
         messages.success(request, 'Book deleted successfully!')
         return redirect('book_list')
-    return render(request, 'books/book_confirm_delete.html', {'book': book})
+    return redirect('book_list')
