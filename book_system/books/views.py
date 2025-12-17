@@ -19,4 +19,4 @@ def book_create(request):
         'form': form,
         'action': 'Create'
     }
-    return render(request, 'books/book_form.html', context )
+    return render(request, 'books/add_book.html', context )
