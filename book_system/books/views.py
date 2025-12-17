@@ -27,6 +27,9 @@ def book_create(request):
 
 def book_delete(request, pk):
     book = get_object_or_404(Book, pk=pk)
+    print(pk)
+    print(book)
+    print(request.method)
     if request.method == 'POST':
         book.delete()
         messages.success(request, 'Book deleted successfully!')
