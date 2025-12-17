@@ -18,6 +18,9 @@
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
             <td>{{ book.genre }}</td>
+            <td>                
+                <a href="{% url 'book_delete' book.pk %}">Delete</a>
+            </td>
         </tr>
         {% empty %}
         <tr>
