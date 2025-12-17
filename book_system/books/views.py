@@ -24,3 +24,11 @@ def book_create(request):
         'action': 'Create'
     }
     return render(request, 'books/add_book.html', context )
+
+def book_delete(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == 'POST':
+        book.delete()
+        messages.success(request, 'Book deleted successfully!')
+        return redirect('book_list')
+    return render(request, 'books/book_confirm_delete.html', {'book': book})
